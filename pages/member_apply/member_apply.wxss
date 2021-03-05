@@ -1,0 +1,86 @@
+/* pages/member_play/member_play.wxss */
+page {
+  background-color: #F8F8F8;
+}
+
+.page_box {
+  padding-bottom: 120rpx;
+}
+
+.apply_title {
+  font-size: 28rpx;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #AA947A;
+  margin: 42rpx 40rpx;
+}
+
+.apply_content {
+  width: 706rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  margin: 0 auto;
+}
+
+.edit-row {
+  height: 100rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  padding: 0 24rpx;
+}
+
+.edit-row .row-label {
+  margin-right: 24rpx;
+  min-width: 140rpx;
+}
+
+.upload_title {
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #333333;
+  margin: 42rpx 25rpx;
+}
+
+.upload_back {
+  width: 645rpx;
+  height: 347rpx;
+  background: #ebe7e75e;
+  border: 1px solid #eeeeee6e;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload_img {
+  width: 100%;
+  height: 100%;
+}
+
+.upload_icon {
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.submitbt {
+  width: 750rpx;
+  height: 99rpx;
+  background-color: #333333;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 99rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.flex-grow-1 {
+  text-align: right;
+}
+
+.must_fill {
+  color: red;
+  margin-right:10rpx;
+}

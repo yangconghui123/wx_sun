@@ -1,0 +1,20 @@
+<!--pages/moreOrders/moreOrders.wxml-->
+<view>
+  <view class="ordedr_title">{{logistic.length}}个包裹已发出</view>
+  <view class="content_box">
+<block  wx:for="{{logistic}}">
+  <navigator class="order-option-btn expres_name" url="/pages/express-detail/express-detail?id={{item.order_id}}&express={{item.express}}&express_no={{item.express_no}}">
+  <view class="expres_name">快递公司：{{item.express}}</view>
+    <view class="flex-grow-0 expres_name ">
+        物流单号：{{item.express_no}}
+      <view class="arrow"></view>
+    </view>
+    <view class="imageList">
+    <block wx:for="{{item.pic_url}}"  wx:for-item="img">
+      <image src="{{img}}"></image>
+    </block>
+    </view>
+  </navigator>
+</block>
+  </view>
+</view>

@@ -1,0 +1,50 @@
+<view class="page_box">
+  <view class="apply_title">请填写，您的申请资料</view>
+  <view class="apply_content">
+    <view class="flex-row flex-y-center edit-row">
+      <view class="flex-grow-0 row-label"><text class="must_fill">*</text>您的姓名</view>
+      <view class="flex-grow-1">
+        <input bindinput="inputuserName" data-name="name" placeholder="" value="{{userName}}"></input>
+      </view>
+    </view>
+    <view class="flex-row flex-y-center edit-row">
+      <view class="flex-grow-0 row-label"><text class="must_fill">*</text>联系电话</view>
+      <view class="flex-grow-1">
+        <input bindinput="inputuserPhone" data-name="name" placeholder="" value="{{userPhone}}"></input>
+      </view>
+    </view>
+    <!-- <picker bindchange="bindPickerChange" value="{{pay_index}}" range="{{array}}">
+    <view class="flex-row flex-y-center edit-row">
+      <view class="flex-grow-0 row-label"><text class="must_fill">*</text>支付类型</view>
+      <view class="flex-grow-1">
+        {{paytype}}
+      </view>
+    </view>
+  </picker> -->
+    <view class="upload_title"><text class="must_fill">*</text>请上传营业执照</view>
+    <view class="upload_back" bindtap="business_license" wx:if="{{business_imgshow==''}}">
+      <image class="upload_icon" src="../../images/upload_icon@2x.png"></image>
+    </view>
+    <view class="upload_back" bindtap="business_license" wx:else>
+      <image class="upload_img" src="{{business_imgshow}}" bindload="imgLoadFunc" mode="aspectFit"></image>
+    </view>
+    <view class="upload_title"><text class="must_fill">*</text>请上传食品许可证</view>
+    <view class="upload_back" bindtap="foodPermit" wx:if="{{foodPermit_imgshow==''}}">
+      <image class="upload_icon" src="../../images/upload_icon@2x.png"></image>
+    </view>
+    <view class="upload_back" bindtap="foodPermit" wx:else>
+      <image class="upload_img" src="{{foodPermit_imgshow}}" mode="aspectFit"></image>
+    </view>
+    <!-- <view wx:if="{{offline_payment}}">
+      <view class="upload_title"><text class="must_fill">*</text>请上传支付凭证</view>
+    <view class="upload_back" bindtap="payVoucher" wx:if="{{pay_img==''}}">
+      <image class="upload_icon" src="../../images/upload_icon@2x.png"></image>
+    </view>
+    <view class="upload_back" bindtap="payVoucher" wx:else>
+      <image class="upload_img" src="{{pay_img}}" mode="aspectFit"></image>
+    </view>
+    </view> -->
+  </view>
+
+</view>
+<view class="submitbt" bindtap="submitbt">立即提交</view>

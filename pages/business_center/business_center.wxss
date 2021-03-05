@@ -1,0 +1,68 @@
+/* pages/businessCenter/businessCenter.wxss */
+.Search_box {
+  background-color: #fff;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width:100%;
+}
+
+.Search_name {
+  display: flex;
+  align-items: center;
+  width: 520rpx;
+  height: 80rpx;
+  border: 2rpx solid #DADADA;
+  border-radius: 40rpx;
+  padding-left: 20rpx;
+  margin: 0 30rpx;
+}
+.contentbox{
+  padding-top:120rpx;
+}
+.content_box {
+  width: 690rpx;
+  /* height: 240rpx; */
+  background: #FFFFFF;
+  margin: 20rpx auto;
+}
+
+.flex-row {
+  padding: 30rpx;
+  border-bottom: 1rpx solid rgb(241, 240, 240);
+  align-items: center;
+}
+
+.business_icon {
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 360rpx;
+  margin-right: 30rpx;
+
+}
+
+.flex-grow-1 {
+  width:400rpx;
+  display: flex;
+  align-items: center;
+}
+
+.market {
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  font-weight: bold;
+  color: #EC615C;
+  line-height: 80rpx;
+}
+
+.seeOrder {
+  width: 150rpx;
+  height:60rpx;
+  background: #EC615C;
+  border-radius: 40rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 40rpx;
+  padding: 10rpx 20rpx;
+}

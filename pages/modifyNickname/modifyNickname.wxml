@@ -1,0 +1,10 @@
+<!--pages/modifyNickname/modifyNickname.wxml-->
+<view>
+  <view class="flex-row flex-y-center edit-row">
+      <view class="flex-grow-0 row-label">昵称</view>
+      <view class="flex-grow-1">
+        <input bindinput="inputuserName" data-name="name" placeholder="" value="{{userName}}"></input>
+      </view>
+    </view>
+</view>
+<view class="submitbt" bindtap="submitbt">立即提交</view>

@@ -1,0 +1,79 @@
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.bottom-bar view {
+    background: #303030;
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #fff;
+}
+
+.edit-row {
+    background: #fff;
+    height: 100rpx;
+    border-bottom: 1rpx solid #eeeeee;
+    padding: 0 24rpx;
+}
+
+.edit-row:first-child {
+    border-top: 1rpx solid #eeeeee;
+}
+
+.edit-row .row-label {
+    margin-right: 24rpx;
+    min-width: 140rpx;
+}
+
+.get-wechat-address {
+    text-align: center;
+    background: #ffffff;
+    color: #303030;
+    padding: 18rpx 0;
+    margin: 32rpx 24rpx;
+    border-radius: 10rpx;
+    display: block;
+}
+
+.get-wechat-address:active {
+    opacity: .85;
+}
+textarea {
+    max-height:100rpx;
+    width: 500rpx;
+}
+.automatic{
+    margin-bottom: 20rpx;
+    background-color: #ffffff;
+    padding: 20rpx;
+}
+.automatic .inputPaste{
+    width:100%;
+    font-size: 28rpx;
+    color: #353535;
+    max-height: 180rpx;
+    padding-top: 20rpx;
+    border: 1px solid #d0d0d0;
+    border-radius: 10rpx;
+    padding-left: 20rpx;
+    box-shadow: 2px 2px 5px #e0dbdb;
+}
+.automatic .Pastebutton{
+    width: 150rpx;
+    height: 60rpx;
+    padding: 0;
+    line-height: 58rpx;
+    border-radius: 5rpx;
+    border: 1rpx solid;
+    font-size: 26rpx;
+    background-color: transparent;
+    margin: 0;
+    text-align: center;
+    color: #de2121;
+    margin-top: 20rpx;
+}

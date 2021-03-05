@@ -1,0 +1,19 @@
+
+<view class="backg_round">
+<view class="bonus">￥<text class="bonus_price">{{get_bonus}}</text>
+</view>
+<image src="../../images/background.jpg" class="backgroundImage"></image>
+<!-- <view class="bonus_rule" bindtap='showshadow'>奖金规则</view> -->
+
+</view>
+
+<!-- 规则弹出窗 -->
+<!-- <view class="shadow" wx:if="{{chooseSize}}" bindtap='hideModal'></view>
+
+<view class='choosen' wx:if="{{chooseSize}}" animation='{{animationData}}'>
+
+  <view class="container-box">
+   <view> 1:这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容这里是规则内容</view>
+  </view>
+  <button type="default" bindtap="close_popup">关闭</button>
+</view> -->

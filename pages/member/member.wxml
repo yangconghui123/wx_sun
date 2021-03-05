@@ -1,0 +1,153 @@
+<view class="page">
+  <include src="/components/common/common"></include>
+  <include src="/components/header/header"></include>
+  <block wx:if="{{user_bind_show}}">
+    <view class="new-modal" wx:if="{{!__user_info.binding&&store.option.phone_auth==1}}">
+      <view class="new-modal-content">
+        <view class="new-modal-header"
+          style="padding:30rpx 0;line-height:60rpx;font-size:11pt;border-bottom: 1rpx solid #eee;">授权获取手机号</view>
+        <view class="new-modal-body" style="min-height:0;margin-bottom:0;">
+          <view style="padding:32rpx 0 40rpx 0;text-align: center">
+            <image src="{{__wxapp_img.system.wechatapp.url}}" style="width: 88rpx;height: 88rpx;"
+              wx:if="{{__platform=='wx'}}"></image>
+            <image src="{{__wxapp_img.system.alipay.url}}" style="width: 88rpx;height: 88rpx;" wx:else></image>
+          </view>
+          <view style="padding:0 41rpx;">
+            <view class="flex-x-center" style="margin-bottom:40rpx;">申请获取您微信绑定的手机号</view>
+          </view>
+          <view class="flex-x-center">
+            <view>
+              <button bindgetphonenumber="getPhoneNumber" class="btn new-modal-btn" hoverClass="none"
+                openType="getPhoneNumber"
+                style="background-color:#04be01;width:500rpx;height:80rpx;border-radius:80rpx;color:#fff;margin-bottom:40rpx;">确认</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="body after-navber">
+    <view style="height:100%;background:#ffffff">
+      <view class="info">
+        <image class="hybg" src="{{user_center_bg}}"></image>
+        <view class="tops">
+          <view class="header_user_info" bindtap="ModifyNickname">
+            <image class="avatar" src="{{user_info.avatar_url}}"></image>
+            <view class="header_member">
+              <view class="nickname" wx:if="{{memberuser.first_name}}">{{memberuser.first_name}}</view>
+              <view class="nickname" wx:else>{{user_info.nickname}}</view>
+              <view class="user-level flex-row">
+                <view class="level-name flex-y-bottom">
+                  <!-- <image src="{{__wxapp_img.user.level.url}}"></image> -->
+                  <view class="flex-y-center class_name" style="height:100%;">{{user_info.level_name||'普通用户'}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <!-- <view class="topview">
+                        <view class="top1 flex-row">
+                            <image class="image1 flex-y-center" src="{{__wxapp_img.user.level.url}}"></image>
+                            <view class="hy_member flex-y-center" style="padding:0 10rpx">{{user_info.level_name||'普通用户'}}</view>
+                        </view>
+                    </view> -->
+          <!-- <view style="margin:0 auto;text-align:center;padding-top:12rpx;width:605rpx;margin-top:30rpx;">
+                        <progress active="true" activeColor="RGBA(132, 92, 51, 1)" backgroundColor="#686868" percent="{{percent}}" strokeWidth="3"></progress>
+                    </view>
+				 <view style="color:#2E2A39;padding-top:20rpx;font-size:8pt;margin-left:70rpx;">已消费{{order_money}}元
+                        <text wx:if="{{next_level}}">，升级还需消费{{s_money}}元</text>
+                    </view>  -->
+          <!-- <view class="zh">
+                        <view class="ye">账户余额 {{money}}元</view>
+                        <navigator hoverClass="none" url="/pages/recharge/recharge">
+                            <view class="cz">
+                                去充值
+                            </view>
+                        </navigator>
+                    </view> -->
+        </view>
+        <!-- <view class="block flex-row flex-y-center">
+					<view class="flex-grow-0 flex-y-center">
+						<image src="{{__wxapp_img.store.member_rights.url}}"></image>
+					</view>
+					<view class="flex-grow-1">我的会员权益</view>
+				</view> -->
+        <block wx:if="{{store.buy_member==1}}">
+          <view class="flex-row flex-y-center" style="background:#ffffff;margin-bottom:15rpx;padding:0 37rpx"
+            wx:if="{{now_level.detail}}">
+            <!-- <text>{{now_level.detail}}</text> -->
+          </view>
+          <view style="background:#ffffff;{{_navbar&&_navbar.navs&&_navbar.navs.length>0?'margin-bottom:115rpx':''}}"
+            wx:if="{{list!=''}}">
+            <view style="height:308rpx;width:100%">
+              <swiper bindchange="changeTabs" data-index="{{index}}" duration="300" nextMargin="{{my?'20px':'40rpx'}}"
+                previousMargin="{{my?'30px':'65rpx'}}" style="height:308rpx;margin-top:70rpx">
+                <swiper-item itemId="{{item.id}}" wx:for="{{list}}" wx:key="{{item.id}}">
+                  <image src="{{item.image}}" style="height:308rpx;display:none"></image>
+                  <image src="{{item.image}}" mode="aspectFit" style="height:308rpx;margin-top:{{my?'32':''}}rpx;"
+                    wx:if="{{item.id==current_id||current_id===undefault&&index===0}}"></image>
+                  <image class="{{current}}" src="{{item.image}}"
+                    style="height:256rpx;padding:0 20rpx;margin-top:{{my?'64':'32'}}rpx;" wx:else></image>
+                </swiper-item>
+              </swiper>
+            </view>
+            <view class="gm" wx:if="{{list[current_key].is_apply!=0}}">
+              <!-- bindtap="showDialogBtn" -->
+              <!-- <image src="/images/go_buyBt@2x.png" class="go_buyBt" ></image> -->
+              <view class="buy_price_box_member">
+                <!-- <view class="buy_price_box_member" style="font-size: 36rpx;">￥{{buy_price}}</view> -->
+                <view style="font-size: 30rpx;" class="go_buy_pricemember" wx:if="{{list[current_key].is_apply==1&&list[current_key].is_examine==1}}" bindtap="member_info">立即申请</view>
+                <view style="font-size: 30rpx;" class="go_buy_pricemember"  wx:if="{{list[current_key].is_apply==1&&list[current_key].is_examine==0&&list[current_key].is_applyed==1}}">审核中</view>
+                <view style="font-size: 30rpx;" class="go_buy_pricemember"  wx:if="{{list[current_key].is_apply==1&&list[current_key].is_examine==0&&list[current_key].is_applyed==0}}" bindtap="member_info">立即申请</view>
+                <!-- <view style="font-size: 30rpx;" class="go_buy_price"  wx:if="{{list[current_key].is_apply==1&&list[current_key].is_examine==2}}"  bindtap="showDialogBtn">待付款</view> -->
+              </view>
+            </view>
+            <view class="gm"  wx:if="{{user_info.level>=list[current_key].level}}">
+            <view class="buy_price_box_member">
+                <view class="go_buy_pricemember" style="font-size:28rpx;">您当前已是【{{user_info.level_name}}】身份</view>
+             </view>
+          </view>
+            <view bindtap="hideModal" catchtouchmove="preventTouchMove" class="modal-mask" wx:if="{{showModal}}"></view>
+            <view style="position: fixed;top:60%;z-index:999;width: 100%;height:86rpx">
+              <view class="modal-dialog " wx:if="{{showModal}}">
+                <view class="modal-footer flex flex-x-center">
+                  <!-- <view bindtap="pay" class="{{index>0?'btn-confirm':'btn-cancel'}} flex-grow-1" data-key="{{current_key}}" data-payment="{{item.payment}}" data-price="{{buy_price}}" wx:for="{{pay_type_list}}" wx:key="{{item.id}}">{{item.name}}</view> -->
+                  <view bindtap="pay" class="{{index>0?'btn-confirm':'btn-cancel'}} flex-grow-1"
+                    data-key="{{current_key}}" data-payment="{{pay_type_list[0].payment}}" data-price="{{buy_price}}">
+                    {{pay_type_list[0].name}}</view>
+                </view>
+              </view>
+            </view>
+            <image class="member_detail_img" mode="widthFix" src="{{list[current_key].detail}}"></image>
+            <!-- <view style="text-align:center;margin-top:30rpx;color:353535;font-size:12pt">成为
+							<text wx:if="{{list[current_key].name===undefault}}">{{next_level.name}}</text>
+							<text wx:else>{{list[current_key].name}}</text>, 您将享受以下专属权益</view>
+						<view class="flex-row flex-y-center" style="width: 100%;padding: 0 37rpx 12rpx 37rpx;background-color: #fff;margin-top:5rpx;height:100%">
+							<text wx:if="{{list[current_key].buy_prompt===undefault}}">{{next_level.buy_prompt}}</text>
+							<text class="flex-grow-1" wx:else>{{list[current_key].buy_prompt}}</text>
+						</view> -->
+          </view>
+        </block>
+        <view class="flex-row" style="flex-wrap:wrap;" wx:if="{{store.buy_member==0}}">
+          <block wx:for="{{now_level.synopsis}}" wx:for-index="idxs" wx:for-item="items">
+            <view class="flex-col" wx:for="{{items}}">
+              <view bindtap="det" class="flex-col flex-x-center flex-y-center" data-content="{{item.content}}"
+                data-idxs="{{idxs}}" data-index="{{index}}" style="height:174rpx;width:187rpx">
+                <image class="flex-grow-0" src="{{item.pic}}"
+                  style="width:64rpx;height:64rpx;margin-top:40rpx;display:block"></image>
+                <view style="padding:20rpx 0">{{item.title}}</view>
+              </view>
+              <view class="flex-x-center flex-y-center">
+                <view
+                  style="height:0px; width:0px;border-bottom:5px solid #f7f7f7;border-left:5px solid transparent;margin-top:-6rpx;border-right:5px solid transparent;"
+                  wx:if="{{index===ids&&cons&&idxs===idx}}"></view>
+              </view>
+            </view>
+            <text style="background:#f7f7f7;color:#666666;padding:40rpx 24rpx;width:100%"
+              wx:if="{{cons&&idxs===idx}}">{{content}}</text>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+  <include src="/components/footer/footer"></include>
+</view>

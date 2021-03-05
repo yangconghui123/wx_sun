@@ -1,0 +1,24 @@
+<!--pages/topup_voucher/topup_voucher.wxml-->
+<view class="box_title">
+    请上传您已经转账的凭证截图
+  </view>
+<view class="upload_box">
+  <view class="recharge_title">
+    本次转账充值金额:
+  </view>
+  <view class="recharge_content">
+    请确保转账截图和输入数值金额一致，避免延误确认到账时效
+  </view>
+<view class="money_value">
+  ￥<input bindinput="input" class="r-input" placeholder="" placeholderClass="r-input-p" type="number"
+    value="{{money}}"></input>
+</view>
+  <view class="upload_title">请上充值凭证</view>
+  <view class="upload_back" bindtap="business_license" wx:if="{{business_img==''}}">
+    <image class="upload_icon" src="../../images/upload_icon@2x.png"></image>
+  </view>
+  <view class="upload_back" bindtap="business_license" wx:else>
+    <image class="upload_img" src="{{business_img}}"></image>
+  </view>
+  <view class="submitbt" bindtap="submitbt">立即提交</view>
+</view>

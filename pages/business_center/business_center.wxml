@@ -1,0 +1,36 @@
+<!--pages/businessCenter/businessCenter.wxml-->
+<view class="Search_box">
+    <view class="Search_name">
+      代理名称 <input placeholder="请输入代理名称" style="padding-left:20rpx;" bindinput="inputkeyword"/>
+    </view>
+    <view class="seeOrder"  bindtap="seachchange">查询</view>
+  </view>
+<view>
+<view>
+
+  <view class="contentbox">
+  <block wx:for="{{salesman_list}}">
+    <view class="content_box"  bindtap="seeOrder" id="{{item.id}}">
+      <view class="flex-row">
+        <view class="flex-grow-1 font-title">
+          <image class="business_icon" src="{{item.avatar_url}}"></image>代理名称：{{item.nickname}}
+        </view>
+        <!-- <view class="flex-grow-0 font-snormal">代理名称：肖肖肖</view> -->
+      </view>
+      <view class="flex-row">
+        <view class="flex-grow-1 font-title" wx:if="{{item.binding==null&&item.tel!=null}}">代理手机：{{item.tel}}</view>
+        <view class="flex-grow-1 font-title" wx:elif="{{item.tel==null}}">代理手机：</view>
+        <view class="flex-grow-1 font-title" wx:else>代理手机：{{item.binding}}</view>
+        <view class="flex-grow-0 font-snormal">代理等级：{{item.levelname}}</view>
+      </view>
+      <view class="flex-row">
+        <view class="flex-grow-1 font-title">加入时间：{{item.addtime}}</view>
+        <!-- <view class="seeOrder">查看订单</view> -->
+      </view>
+
+    </view>
+  </block>
+</view>
+  
+</view>
+</view>

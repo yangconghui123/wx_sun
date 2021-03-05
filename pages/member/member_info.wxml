@@ -1,0 +1,102 @@
+<view class="page">
+	<include src="/components/common/common"></include>
+	<include src="/components/header/header"></include>
+	<view class="body after-navber">
+		<view class="bottom-bar">
+			<view bindtap="saveAddUserInfo">立即提交</view>
+		</view>
+		<view>
+			<view class="flex-row flex-y-center edit-row">
+				<view class="flex-grow-0 row-label">会员名称</view>
+				<view class="flex-grow-1">
+					<input bindinput="inputVIPname" placeholder="" disabled="{{isdisabled}}" value="{{name}}"></input>
+				</view>
+			</view>
+			<view wx:if="{{isdisabled==false}}">
+				<picker mode="date" value="{{birthday}}" start="1970-01-01" end="2050-01-01" bindchange="bindDateChange">
+					<view class="flex-row flex-y-center edit-row">
+						<view class="flex-grow-0 row-label">您的生日</view>
+						<view class="flex-grow-1 flex-row">
+							<view class="flex-grow-1" style="text-align: right;padding-right: 24rpx">
+								<block wx:if="{{birthday==''}}">请选择</block>
+								<block wx:else>{{birthday}}</block>
+							</view>
+							<view class="flex-grow-0 flex-y-center">
+								<image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+							</view>
+						</view>
+					</view>
+
+				</picker>
+			</view>
+			<view class="flex-row flex-y-center edit-row" wx:else>
+				<view class="flex-grow-0 row-label">您的生日</view>
+				<view class="flex-grow-1 flex-row">
+					<view class="flex-grow-1" style="text-align: right;padding-right: 24rpx">
+						<block wx:if="{{birthday==''}}">请选择</block>
+						<block wx:else>{{birthday}}</block>
+					</view>
+					<view class="flex-grow-0 flex-y-center">
+						<image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+					</view>
+				</view>
+			</view>
+			<view wx:if="{{isdisabled==false}}">
+				<picker bindchange="bindPickerChange" value="{{sex_index}}" range="{{array}}">
+					<view class="flex-row flex-y-center edit-row">
+						<view class="flex-grow-0 row-label">性别</view>
+						<view class="flex-grow-1 flex-row">
+							<view class="flex-grow-1" style="text-align: right;padding-right: 24rpx">
+								<block wx:if="{{sex_index==-1}}">请选择</block>
+								<block wx:else>{{array[sex_index]}}</block>
+							</view>
+							<view class="flex-grow-0 flex-y-center">
+								<image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+							</view>
+						</view>
+					</view>
+
+				</picker>
+			</view>
+			<view class="flex-row flex-y-center edit-row" wx:else>
+				<view class="flex-grow-0 row-label">性别</view>
+				<view class="flex-grow-1 flex-row">
+					<view class="flex-grow-1" style="text-align: right;padding-right: 24rpx">
+						<block wx:if="{{sex_index==-1}}">请选择</block>
+						<block wx:else>{{array[sex_index]}}</block>
+					</view>
+					<view class="flex-grow-0 flex-y-center">
+						<image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+					</view>
+				</view>
+			</view>
+			<view class="flex-row flex-y-center edit-row">
+				<view class="flex-grow-0 row-label">联系电话</view>
+				<view class="flex-grow-1">
+					<input bindinput="inputmobile" placeholder="" value="{{mobile}}"></input>
+				</view>
+			</view>
+			<view class="flex-row flex-y-center edit-row">
+				<view class="flex-grow-0 row-label">所在地区</view>
+				<view bindtap="showAreaPicker" class="flex-grow-1 flex-row">
+					<view class="flex-grow-1" style="text-align: right;padding-right: 24rpx">
+						<block wx:if="{{district==null}}">请选择</block>
+						<block wx:else>{{district.province.name}} {{district.city.name}} {{district.district.name}}</block>
+					</view>
+					<view class="flex-grow-0 flex-y-center">
+						<image src="{{__wxapp_img.store.jiantou_r.url}}" style="width: 12rpx;height: 22rpx"></image>
+					</view>
+				</view>
+			</view>
+			<view class="flex-row flex-y-center edit-row">
+				<view class="flex-grow-0 row-label">详细地址</view>
+				<view class="flex-grow-1">
+					<input bindinput="inputdetail" placeholder="" value="{{detail}}"></input>
+				</view>
+			</view>
+
+		</view>
+	</view>
+	<include src="/components/footer/footer"></include>
+	<include src="./../../components/area-picker/area-picker.wxml"></include>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "授信余额",
+  "usingComponents": {
+      "app-navigation": "/components/quick-navigation-components/index"
+  }
+}

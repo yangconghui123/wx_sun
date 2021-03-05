@@ -1,0 +1,46 @@
+/* pages/moreOrders/moreOrders.wxss */
+page{
+background-color:#f5f5f5;
+}
+.ordedr_title{
+  background-color:rgba(241, 179, 179, 0.515);
+  height:120rpx;
+  line-height:120rpx;
+  line-height:120rpx;
+  padding-left:30rpx;
+  color:#333
+}
+.content_box{
+  background-color:#fff;
+  margin-top:20rpx;
+
+}
+.expres_name{
+  padding:20rpx;
+}
+.order-option-btn::after {
+    display: none;
+}
+.arrow{
+  width:7px;
+  height:7px;
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+  transform: rotate(45deg);
+}
+.flex-grow-0{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right:30rpx;
+}
+.imageList{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.imageList  image{
+  height:180rpx;
+  width:180rpx;
+  margin-left: 20rpx;
+}

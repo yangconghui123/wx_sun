@@ -1,0 +1,195 @@
+page {
+    overflow-x: hidden;
+}
+
+.status-bar {
+    box-sizing: border-box;
+    padding: 0 88rpx;
+    color: #fff;
+    font-size: 13pt;
+    height: 120rpx;
+    line-height: 120rpx;
+    position: relative;
+    z-index: 8;
+}
+
+.status-bar image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.order-option-btn {
+    /* height:60rpx; */
+    margin-top:20rpx;
+    background-color: #ffffff;
+    /* padding: 0 24rpx; */
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+.play-btn1 {
+    height:50rpx;
+    border: 1rpx solid #d6d6d6!important;
+    color: #333333;
+    border-radius: 10rpx;
+    line-height:50rpx;
+    text-align: center;
+    padding: 0 20rpx!important;
+    margin: 0 0 0 24rpx!important;
+    background-color: transparent!important;
+}
+.block {
+    background: #fff;
+    padding: 32rpx 24rpx;
+    margin-bottom: 20rpx;
+}
+
+.block .block-row {
+    margin-bottom: 10rpx;
+}
+
+.block .block-footer {
+    border-top: 1rpx solid #eee;
+    margin-left: -24rpx;
+    margin-right: -24rpx;
+    padding: 24rpx;
+    padding-bottom: 0;
+    margin-top: 32rpx;
+    text-align: right;
+    font-weight: bold;
+}
+
+.goods-item {
+    border-bottom: 1rpx solid #E3E3E3;
+    padding-bottom:20rpx;
+    margin-bottom: 32rpx;
+}
+
+.goods-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.refund-btn {
+    float: right;
+    height: 60rpx;
+    border: 1rpx solid #bbb;
+    padding: 0 30rpx;
+    border-radius: 10rpx;
+    margin-top: 20rpx;
+}
+
+.refund-text {
+    float: right;
+    display: inline-block;
+    margin-top: 20rpx;
+}
+
+.pay-type {
+    width: 100%;
+    padding: 32rpx 0 8rpx 0;
+    border-top: 1rpx solid #e2e2e2;
+    margin-top: 32rpx;
+}
+
+.play-btn {
+    height: 64rpx;
+    border: 1rpx solid #ff5c5c!important;
+    color: #ff5c5c;
+    border-radius: 10rpx;
+    line-height: 64rpx;
+    text-align: center;
+    padding: 0 20rpx!important;
+    margin: 0 0 0 24rpx!important;
+    background-color: transparent!important;
+}
+
+.order-footer {
+    height: 98rpx;
+    margin-top: 20rpx;
+    border-top: 1rpx solid #e2e2e2;
+    background-color: #ffffff;
+    padding: 0 24rpx;
+    text-align: right;
+    justify-content: flex-end;
+}
+.pop_up{
+    position: fixed;
+    height:100%;
+    width:100%;
+    z-index: 9999;
+    background:rgba(60, 60, 60, 0.76);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content{
+    background:#fff;
+    width:400rpx;
+    height:250rpx;
+}
+.refundnum{
+    font-size:30rpx;
+    text-align: center;
+    padding:20rpx 0;
+}
+.stepper {
+    width:80px;
+    height:26px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top:30rpx;
+  }
+  /*加号和减号*/
+  .stepper text {
+    float: left;
+    width: 19px;
+    line-height: 26px;
+    text-align: center;
+  }
+  /*数值*/
+  .stepper input {
+    width: 40px;
+    height: 26px;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+  .refund_cl_cm{
+      display: flex;
+      height:70rpx;
+      width:100%;
+      line-height: 70rpx;
+      justify-content: space-between;
+      margin-top:20rpx;
+  }
+  .cancel_bt{
+      text-align:center;
+      width:50%;
+      color:#666;
+      font-size:30rpx;
+      border:1px solid rgb(238, 236, 236);
+  }
+  .comfin_bt{
+    text-align:center;
+    width:50%;
+    color:rgb(65, 132, 231);
+    font-size:30rpx;
+    border:1px solid rgb(238, 236, 236);
+}
+/*普通样式*/
+.stepper .normal {
+    color:black;
+  }
+  /*禁用样式*/
+  .stepper .disable {
+    color: #ccc;
+  }
